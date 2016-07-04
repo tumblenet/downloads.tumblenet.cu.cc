@@ -1,4 +1,5 @@
 $(document).ready(function(){
+      $("#repos").html("test");
       var text = "";
       var reposArray=[];
       reposArray = githubAPI("users/tumblegamer/repos");
