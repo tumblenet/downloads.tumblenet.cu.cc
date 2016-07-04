@@ -2,7 +2,7 @@ $(document).ready(function(){
       function githubTest(location) {
   var url = "https://api.github.com/" + location;
   $.getJSON(url, function(data) {
-    return data
+    return data;
   });
 }
       var text = "";
