@@ -1,14 +1,13 @@
 $(document).ready(function(){
       $("#repos").html("test");
       var text = "";
-      var repoArray = [];
       githubAPI("orgs/tumblegamer/repos", function(data) {
-            repoArray = data;
-            alert(data);
-      });
-      $.each(repoArray, function(index,element) {
+            $.each(data, function(index,element) {
                   text = text + "<li>" + element.name + "<br><a href=" + element.zipball_url + ">Download ZIP</a> | <a href=" + element.tarball_url + ">Download TAR</a> | <a href=" + element.html_url + ">Change Log</a></li><br>";
             });
+            alert(data);
+      });
+      
       text = "<ul>" + text + "</ul>";
       $("#repos").html(text);
       
