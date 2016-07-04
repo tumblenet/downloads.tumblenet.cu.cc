@@ -1,12 +1,10 @@
 $(document).ready(function(){
       $("#repos").html("test");
       var text = "";
+      var repos = [];
       githubAPI("users/tumblegamer/repos", function(data) {
-            text=data[0].id;
-            $("#repos").html(text);
+            repos=data;
       });
-      
-      
-      
+      $("#repos").html(repos[0].name);
       
     });
