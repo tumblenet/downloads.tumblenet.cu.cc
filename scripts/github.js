@@ -1,6 +1,6 @@
 $(document).ready(function(){
       var text = "";
-      var reposArray=[]
+      var reposArray=[];
       reposArray = githubAPI("users/tumblegamer/repos");
       
       $.each(reposArray, function(index,element) {
