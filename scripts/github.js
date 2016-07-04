@@ -8,7 +8,7 @@ $(document).ready(function(){
       });
       
       text = "<ul>" + text + "</ul>";
-      aleart(text);
+      alert(text);
       $("#repos").html(text);
       
       
