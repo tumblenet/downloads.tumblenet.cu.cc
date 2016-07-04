@@ -1,9 +1,24 @@
-$(document).ready(function(){
-      $("#repos").html("loading GitHub API...");
-      var text = "";
-      githubAPI("users/tumblegamer/repos", function(data) {
-            text=data[0].id;
+jQuery.fn.loadRepositories = function(username) {
+    this.html("<span>Querying GitHub for " + username +"'s repositories...</span>");
+     
+    var target = this;
+    $.githubAPI("users/" + username + "/repos", function(data) {
+        var repos = data.data; // JSON Parsing
+        sortByName(repos);    
+     
+        var list = $('<dl/>');
+        target.empty().append(list);
+        $(repos).each(function() {
+            if (this.name != (username.toLowerCase()+'.github.com')) {
+                list.append('<dt><a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + this.name + '</a> <em>'+(this.language?('('+this.language+')'):'')+'</em></dt>');
+                list.append('<dd>' + this.description +'</dd>');
+            }
+        });      
       });
-      $("#repos").html(text);
       
-    });
+    function sortByName(repos) {
+        repos.sort(function(a,b) {
+        return a.name - b.name;
+       });
+    }
+};
