@@ -16,7 +16,7 @@ jQuery.fn.loadRepositories = function(username) {
                     text = text + "<a href='" + this.html_url + "/issues' class='mdl-button'>Issues</a>";
                 }
                 if(this.has_wiki){
-                    text = text + "<a href='" + this.html_url + "/wiki' class='mdl-button'>Downloadss</a>";
+                    text = text + "<a href='" + this.html_url + "/wiki' class='mdl-button'>Wiki</a>";
                 }
                 
                 
