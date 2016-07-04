@@ -10,5 +10,5 @@ $(document).ready(function(){
       var releasesText = reposArray.toString()
       alert(releasesText);
       
-      $("#releases").html(text);
+      $("#repos").html(text);
     });
