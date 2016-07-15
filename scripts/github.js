@@ -8,7 +8,7 @@ jQuery.fn.loadRepositories = function(username) {
         sortByName(repos);    
         $(repos).each(function() {
             if (this.name != (username.toLowerCase()+'.github.io')) {
-                text = text + "<a href='https://github.com/organizations/" + username + "/repositories/new'><button class='mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent' id='add'><i class='material-icons' role='presentation'>add</i><span class='visuallyhidden'>Add</span></button></a>     <section class='section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp'><div class='mdl-card mdl-cell mdl-cell--12-col'><div class='mdl-card__supporting-text'><h4>" + this.name + "</h4><h5>" + this.language + "</h5>" + this.description + "</div><div class='mdl-card__actions'><a href='" + this.html_url + "' class='mdl-button'>GitHub</a>";
+                text = text + "<a href='https://github.com/organizations/" + this.login + "/repositories/new'><button class='mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent' id='add'><i class='material-icons' role='presentation'>add</i><span class='visuallyhidden'>Add</span></button></a>     <section class='section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp'><div class='mdl-card mdl-cell mdl-cell--12-col'><div class='mdl-card__supporting-text'><h4>" + this.name + "</h4><h5>" + this.language + "</h5>" + this.description + "</div><div class='mdl-card__actions'><a href='" + this.html_url + "' class='mdl-button'>GitHub</a>";
                 if(this.homepage != ""){
                     text = text + "<a href='" + this.homepage + "' class='mdl-button'>Website</a>";
                 }
