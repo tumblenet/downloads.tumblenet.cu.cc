@@ -19,7 +19,11 @@ jQuery.fn.loadRepositories = function(username) {
                 if(this.has_wiki){
                     text = text + "<a href='" + this.html_url + "/wiki' class='mdl-button'>Wiki</a>";
                 }
-                
+                githubAPI("users/" + username + "/repos", function(face) {
+                if(face != ""){
+                    text = text + "<a href='" + this.html_url + "/releases' class='mdl-button'>Wiki</a>";
+                }
+                });
                 
                 text = text + "</div></div></section>";
             }
