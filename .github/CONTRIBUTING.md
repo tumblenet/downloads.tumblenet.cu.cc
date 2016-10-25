@@ -1,5 +1,5 @@
-# Steps for creating good issues or pull requests.
+Follow the titles provides in the text automaticly placed for you
 
-# Links to external documentation, mailing lists, or a code of conduct.
+need any help [email us](mailto:support.tumblenet.tk)
 
-# Community and behavioral expectations.
+Please be nice. (Constructive critisism)
